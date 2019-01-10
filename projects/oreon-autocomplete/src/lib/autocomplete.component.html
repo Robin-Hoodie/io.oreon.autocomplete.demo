@@ -1,0 +1,7 @@
+<ul class="autocomplete-box" *ngIf="filteredUsers.length">
+  <li *ngFor="let user of filteredUsers; trackBy: trackByUsername" (click)="onClickOption(user.username)">
+    <img class="autocomplete-box__image" [src]="user.avatar_url">
+    <span class="autocomplete-box__username">{{user.username}}</span>
+    <span class="autocomplete-box__name">{{user.name}}</span>
+  </li>
+</ul>

@@ -133,6 +133,76 @@
           }
         }
       }
+    },
+    "io-oreon-autocomplete": {
+      "root": "projects/io-oreon-autocomplete",
+      "sourceRoot": "projects/io-oreon-autocomplete/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/io-oreon-autocomplete/tsconfig.lib.json",
+            "project": "projects/io-oreon-autocomplete/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/io-oreon-autocomplete/src/test.ts",
+            "tsConfig": "projects/io-oreon-autocomplete/tsconfig.spec.json",
+            "karmaConfig": "projects/io-oreon-autocomplete/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/io-oreon-autocomplete/tsconfig.lib.json",
+              "projects/io-oreon-autocomplete/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "oreon-autocomplete": {
+      "root": "projects/oreon-autocomplete",
+      "sourceRoot": "projects/oreon-autocomplete/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/oreon-autocomplete/tsconfig.lib.json",
+            "project": "projects/oreon-autocomplete/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/oreon-autocomplete/src/test.ts",
+            "tsConfig": "projects/oreon-autocomplete/tsconfig.spec.json",
+            "karmaConfig": "projects/oreon-autocomplete/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/oreon-autocomplete/tsconfig.lib.json",
+              "projects/oreon-autocomplete/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "io-oreon-autocomplete-demo"

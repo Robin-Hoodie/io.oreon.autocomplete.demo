@@ -1,5 +1,9 @@
-import { TestBed, async } from '@angular/core/testing';
+import { async, TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { AutocompleteModule } from 'oreon-autocomplete';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -7,6 +11,12 @@ describe('AppComponent', () => {
       declarations: [
         AppComponent
       ],
+      imports: [
+        ReactiveFormsModule,
+        CommonModule,
+        HttpClientTestingModule,
+        AutocompleteModule
+      ]
     }).compileComponents();
   }));
 
@@ -14,18 +24,5 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
     expect(app).toBeTruthy();
-  });
-
-  it(`should have as title 'io-oreon-autocomplete-demo'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('io-oreon-autocomplete-demo');
-  });
-
-  it('should render title in a h1 tag', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('Welcome to io-oreon-autocomplete-demo!');
   });
 });

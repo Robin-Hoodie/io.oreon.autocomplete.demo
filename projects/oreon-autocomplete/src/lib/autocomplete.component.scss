@@ -1,0 +1,36 @@
+.autocomplete-box {
+  padding: 5px;
+  list-style-type: none;
+
+  li {
+    cursor: pointer;
+    display: inline;
+    float: left;
+    clear: left;
+    padding: 8px;
+    border-radius: 5px;
+
+    &:hover {
+      background-color: salmon;
+    }
+  }
+
+  .autocomplete-box__image {
+    height: 20px;
+    width: 20px;
+    vertical-align: middle;
+  }
+
+  .autocomplete-box__name {
+    color: #ccc;
+    font-size: .8em;
+  }
+
+  .autocomplete-box__username {
+    display: inline-block;
+    margin-right: 5px;
+    margin-left: 5px;
+  }
+}
+
+

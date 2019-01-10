@@ -1,0 +1,37 @@
+$width: 500px;
+
+.comment-input {
+  width: $width;
+  margin: 0 auto;
+
+  label {
+    margin-right: 4px;
+    font-size: .8em;
+  }
+
+  input {
+    padding: 8px;
+    border: none;
+    border-bottom: solid black 1px;
+    width: 80%;
+
+    &:focus {
+      border-bottom-color: lightblue;
+      border-bottom-width: 2px;
+      outline: none;
+    }
+  }
+}
+
+.comments {
+  width: $width;
+  margin: 350px auto 20px auto;
+  padding: 16px;
+  border: 1px solid black;
+  box-shadow: #ccc 2px 2px 4px 4px;
+  color: #bbb;
+
+  ul {
+    list-style-type: none;
+  }
+}

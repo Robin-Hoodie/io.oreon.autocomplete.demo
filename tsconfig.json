@@ -17,6 +17,20 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "io-oreon-autocomplete": [
+        "dist/io-oreon-autocomplete"
+      ],
+      "io-oreon-autocomplete/*": [
+        "dist/io-oreon-autocomplete/*"
+      ],
+      "oreon-autocomplete": [
+        "dist/oreon-autocomplete"
+      ],
+      "oreon-autocomplete/*": [
+        "dist/oreon-autocomplete/*"
+      ]
+    }
   }
 }
