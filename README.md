@@ -42,4 +42,7 @@ This application is deployed at https://autocomplete.oreon.io
 - Clone the demo project `git clone https://github.com/OreonRobin/io.oreon.autocomplete.demo`
 - Install the dependencies by running `npm install` or `yarn install`
 - Run the project by running `npm start` or `yarn start`
+- Run the tests by running `npm run test` or `yarn test`
+- Build the app by running `npm run build` or `yarn build`
+
  
