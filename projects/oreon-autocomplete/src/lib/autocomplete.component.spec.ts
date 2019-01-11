@@ -23,10 +23,10 @@ describe('AutocompleteComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should have an empty list of filteredUsers when the comment is empty', () => {
-    component.comment = '';
+  it('should have an empty list of filteredUsers when the inputValue is empty', () => {
+    component.inputValue = '';
     component.ngOnChanges({
-      comment: {
+      inputValue: {
         previousValue: '',
         currentValue: '',
         firstChange: false,
@@ -37,11 +37,11 @@ describe('AutocompleteComponent', () => {
   });
 
   it('should have an empty list of filteredUsers when there is no regex match', () => {
-    component.comment = 'Hello, world';
+    component.inputValue = 'Hello, world';
     component.ngOnChanges({
-      comment: {
+      inputValue: {
         previousValue: '',
-        currentValue: component.comment,
+        currentValue: component.inputValue,
         firstChange: false,
         isFirstChange: () => false
       }
@@ -50,12 +50,12 @@ describe('AutocompleteComponent', () => {
   });
 
   it('should have a list of filteredUsers with length 5', () => {
-    component.comment = '@r';
+    component.inputValue = '@r';
     component.users = mockUsers;
     component.ngOnChanges({
-      comment: {
+      inputValue: {
         previousValue: '',
-        currentValue: component.comment,
+        currentValue: component.inputValue,
         firstChange: false,
         isFirstChange: () => false
       }
@@ -64,12 +64,12 @@ describe('AutocompleteComponent', () => {
   });
 
   it('should have a list of filteredUsers, only containing "Bilbo Baggins"', () => {
-    component.comment = '@b';
+    component.inputValue = '@b';
     component.users = mockUsers;
     component.ngOnChanges({
-      comment: {
+      inputValue: {
         previousValue: '',
-        currentValue: component.comment,
+        currentValue: component.inputValue,
         firstChange: false,
         isFirstChange: () => false
       }
@@ -81,12 +81,12 @@ describe('AutocompleteComponent', () => {
   });
 
   it('should have a list of filteredUsers, only containing "Radagast TheBrown", aka "LittleGandalf"', () => {
-    component.comment = '@little';
+    component.inputValue = '@little';
     component.users = mockUsers;
     component.ngOnChanges({
-      comment: {
+      inputValue: {
         previousValue: '',
-        currentValue: component.comment,
+        currentValue: component.inputValue,
         firstChange: false,
         isFirstChange: () => false
       }
@@ -98,12 +98,12 @@ describe('AutocompleteComponent', () => {
   });
 
   it('should have a list of filteredUsers, only containing "Robin Hood"', () => {
-    component.comment = '@robinh';
+    component.inputValue = '@robinh';
     component.users = mockUsers;
     component.ngOnChanges({
-      comment: {
+      inputValue: {
         previousValue: '',
-        currentValue: component.comment,
+        currentValue: component.inputValue,
         firstChange: false,
         isFirstChange: () => false
       }
@@ -115,17 +115,17 @@ describe('AutocompleteComponent', () => {
   });
 
   it('should add "@robintron " to the input`s value', () => {
-    component.commentElement = document.createElement('input');
-    component.commentElement.value = 'Hello @';
+    component.inputElement = document.createElement('input');
+    component.inputElement.value = 'Hello @';
     component.onClickOption('robintron');
-    expect(component.commentElement.value).toBe('Hello @robintron ');
+    expect(component.inputElement.value).toBe('Hello @robintron ');
   });
 
   it('should have focused the input element, dispatched an input event and reset the filteredUsers', () => {
-    component.commentElement = document.createElement('input');
-    component.commentElement.value = '@';
-    const focusSpy = spyOn(component.commentElement, 'focus');
-    const dispatchSpy = spyOn(component.commentElement, 'dispatchEvent');
+    component.inputElement = document.createElement('input');
+    component.inputElement.value = '@';
+    const focusSpy = spyOn(component.inputElement, 'focus');
+    const dispatchSpy = spyOn(component.inputElement, 'dispatchEvent');
     component.onClickOption('r');
     expect(focusSpy).toHaveBeenCalledTimes(1);
     expect(dispatchSpy).toHaveBeenCalledWith(new Event('input'));

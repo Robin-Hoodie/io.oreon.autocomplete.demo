@@ -1,0 +1,16 @@
+{
+  "hosting": {
+    "public": "dist/io-oreon-autocomplete-demo",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}

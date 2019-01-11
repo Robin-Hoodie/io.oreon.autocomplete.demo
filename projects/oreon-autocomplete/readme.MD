@@ -1,10 +1,7 @@
-# Oreon Autocomplete Demo
+# Oreon Autocomplete
 
-User autocomplete component that can be used together with an input element. 
-Typically this would be used together with inputs used as comments.
-
-This repository contains the source code for both the demo application as well as the autocomplete component itself.  
-The autocomplete component's source code can be found under `projects/oreon-autocomplete`
+This autocomplete component can be used together with an input element. 
+Typically this would be used together with inputs used as comments
 
 # Usage
 

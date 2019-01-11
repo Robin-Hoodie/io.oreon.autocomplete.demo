@@ -13,10 +13,10 @@ export class AutocompleteComponent implements OnChanges {
   users: User[];
   /* Comment to filter users by */
   @Input()
-  comment: string;
+  inputValue: string;
   /* HTML element that should be autocompleted */
   @Input()
-  commentElement: HTMLInputElement;
+  inputElement: HTMLInputElement;
   filteredUsers: User[] = [];
   private searchTermRegex = /(?<=@)\w*$/;
   private MAX_USERS_TO_SHOW = 5;
@@ -28,11 +28,11 @@ export class AutocompleteComponent implements OnChanges {
    * Filter users by @searchTerrmRegex, looking for a match in either the user's name or username, ignoring whitspaces in the name
    * If searchTerm is only '@', so when the user starts mentioning a user, show the first @MAX_USERS_TO_SHOW users
    * If more than 5 matches, keep only the first @MAX_USERS_TO_SHOW matches
-   * If comment is falsy, or regex doesn't return any matches, reset filteredUsers to empty array
+   * If inputValue is falsy, or regex doesn't return any matches, reset filteredUsers to empty array
    */
   ngOnChanges(changes: SimpleChanges): void {
-    if (changes['comment'] && changes['comment'].currentValue && this.users) {
-      const regexMatch = this.searchTermRegex.exec(this.comment); // Extract searchTerm
+    if (changes['inputValue'] && changes['inputValue'].currentValue && this.users) {
+      const regexMatch = this.searchTermRegex.exec(this.inputValue); // Extract searchTerm
       if (regexMatch != null) {
         let searchTerm: string = regexMatch[0];
         if (searchTerm === '@') {
@@ -55,17 +55,17 @@ export class AutocompleteComponent implements OnChanges {
 
   /*
    * Add username to the input's value.
-   * Always add username (keeping the '@' to signify username in comment)
+   * Always add username (keeping the '@' to signify username in inputValue)
    * as there is no way of knowing whether a user meant to search for a username or name
    * Focus the input element and reset the list of filteredUsers after adding the username to the input's value
-   * Purposely not using Renderer2 as this app is solely meant for the browser platform
+   * Purposely not using Renderer2 as this component is solely meant for the browser platform
    */
   onClickOption(username: string): void {
-    let inputValue = this.commentElement.value;
+    let inputValue = this.inputElement.value;
     inputValue = `${inputValue.replace(this.searchTermRegex, username)} `;
-    this.commentElement.value = inputValue;
-    this.commentElement.dispatchEvent(new Event('input')); // Trigger valueChanges on input's formControl
-    this.commentElement.focus();
+    this.inputElement.value = inputValue;
+    this.inputElement.dispatchEvent(new Event('input')); // Trigger valueChanges on input's formControl
+    this.inputElement.focus();
     this.filteredUsers = [];
   }
 

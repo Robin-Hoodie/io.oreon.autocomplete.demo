@@ -1,27 +1,31 @@
-<section class="comments">
-  <h1>Comments</h1>
-  <ul>
-    <li *ngFor="let comment of comments">
-      {{comment}}
-    </li>
-  </ul>
-</section>
+<div class="container">
+  <section class="comments">
+    <mat-card>
+      <mat-card-title>Comments</mat-card-title>
+      <mat-card-content>
+        <ul>
+          <li *ngFor="let comment of comments">
+            {{comment}}
+          </li>
+        </ul>
+      </mat-card-content>
+    </mat-card>
+  </section>
 
-<section class="comment-input">
-
-  <label for="comment"
-         class="demo__label">
-    Comment
-  </label>
-  <input
-    [formControl]="commentCtrl"
-    #commentElement
-    (keyup.enter)="onEnter()"
-    autofocus
-    autocomplete="off"
-    id="comment">
-  <oreon-autocomplete [users]="users$ | async"
-                      [comment]="comment"
-                      [commentElement]="commentElement">
-  </oreon-autocomplete>
-</section>
+  <section class="comments-input">
+    <mat-form-field>
+    <input
+      matInput
+      placeholder="Comment (ENTER to add)"
+      [formControl]="commentCtrl"
+      #commentElement
+      (keyup.enter)="onEnter()"
+      autofocus
+      autocomplete="off">
+    </mat-form-field>
+    <oreon-autocomplete [users]="users$ | async"
+                        [inputValue]="comment"
+                        [inputElement]="commentElement">
+    </oreon-autocomplete>
+  </section>
+</div>
