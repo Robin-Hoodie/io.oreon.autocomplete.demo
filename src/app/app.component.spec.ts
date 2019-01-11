@@ -4,6 +4,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { AutocompleteModule } from 'oreon-autocomplete';
+import { MatCardModule, MatInputModule } from '@angular/material';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -15,7 +16,9 @@ describe('AppComponent', () => {
         ReactiveFormsModule,
         CommonModule,
         HttpClientTestingModule,
-        AutocompleteModule
+        AutocompleteModule,
+        MatCardModule,
+        MatInputModule
       ]
     }).compileComponents();
   }));

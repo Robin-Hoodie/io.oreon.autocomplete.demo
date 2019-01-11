@@ -1,13 +1,14 @@
 {
   "name": "oreon-autocomplete",
-  "version": "0.0.6",
+  "author": "Robin Hellemans robin@oreon.io",
+  "version": "0.0.7",
   "peerDependencies": {
     "@angular/common": "^7.1.0",
     "@angular/core": "^7.1.0"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/OreonRobin/io.oreon.autocomplete"
+    "url": "https://github.com/OreonRobin/io.oreon.autocomplete.demo"
   },
-  "description": "Pluggable autocomplete component for users"
+  "description": "Demo for using pluggable Angular autocomplete component for users"
 }

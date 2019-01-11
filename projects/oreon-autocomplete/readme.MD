@@ -1,7 +1,7 @@
 # Oreon Autocomplete
 
-This autocomplete component can be used together with an input element. 
-Typically this would be used together with inputs used as comments
+This user autocomplete component can be used together with an input element. 
+Typically this would be used together with inputs used as comments.
 
 # Usage
 
@@ -30,13 +30,6 @@ The autocomplete component can be used as follows:
 
 Install it by running `npm install oreon-autocomplete` or `yarn add oreon-autocomplete`
 
-## Demo project
+## Tests
 
-A demo application is published at https://autocomplete.oreon.io to showcase its usage
-
-## Building/running demo project locally
-
-- Clone the demo project `git clone https://github.com/OreonRobin/io.oreon.autocomplete.demo`
-- Install the dependencies by running `npm install` or `yarn install`
-- Run the project by running `npm start` or `yarn start`
- 
+Tests can be run by cloning the demo project and running `ng test oreon-autocomplete` 

@@ -4,10 +4,6 @@ import { Observable } from 'rxjs';
 import { FormControl } from '@angular/forms';
 import { User } from 'oreon-autocomplete';
 
-// TODO: Check browser compatibility
-// TODO: Go over instructions
-// TODO: Add readme
-// TODO: Deploy demo
 @Component({
   selector: 'oreon-root',
   templateUrl: './app.component.html',
