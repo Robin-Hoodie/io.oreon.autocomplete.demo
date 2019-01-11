@@ -33,11 +33,11 @@ The autocomplete component can be used as follows:
 
 Install it by running `npm install oreon-autocomplete` or `yarn add oreon-autocomplete`
 
-## Demo project
+## Deployed version
 
-A demo application is published at https://autocomplete.oreon.io to showcase its usage
+This application is deployed at https://autocomplete.oreon.io 
 
-## Building/running demo project locally
+## Building/running the demo project locally
 
 - Clone the demo project `git clone https://github.com/OreonRobin/io.oreon.autocomplete.demo`
 - Install the dependencies by running `npm install` or `yarn install`
